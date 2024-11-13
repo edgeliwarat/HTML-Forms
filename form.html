@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> html forms </title>
+    </head>
+    <body>
+
+<style>
+
+    #userForm, h2, p{
+        margin: 20px;
+        padding: 10px;
+        
+    }
+
+    #userForm input{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    #userForm label{
+        width: 150px; 
+        font-weight: bold;
+        padding-right: 10px
+    }
+
+    #userForm input[type="text"] {
+            padding: 5px;
+            margin-left: 5px;
+        }
+    
+    #p p{
+        font-weight: bold;
+        font-size: 30px
+        
+    }
+   
+</style>
+
+        <h2>The HTML Forms</h2>
+
+        <form id="userForm">
+            <label for="fname">Input First Name: </label>
+            <input type="text" id="fname" name="fname" value="ex: Juan"><br>
+
+            <label for="mname">Input Middle Name: </label> 
+            <input type="text" id="mname" name="mname" value= "ex: Tamad"><br>
+
+            <label for="lname">Input Last Name: </label>
+            <input type="text" id="lname" name="lname" value="ex: Dela Cruz"> <br>
+
+            <label for="age">Input Age: </label>
+            <input type="text" id="age" name="age" value="ex: 25 years old"> <br>
+
+            <label for="section">Input Section: </label>
+            <input type="text" id="section" name="section" value="ex: DCpEt 1-2"> <br>
+            <input type="button" value="Submit" onclick="displayResult()">
+            <p>Please Click the Button</p>
+        </form>
+
+        
+
+        <div id="result" style="display: none;">
+            <h2>Form Submission Result</h2>
+            <section id="p">
+                <p id="firstNameDisplay"></p>
+                <p id="middleNameDisplay"></p>
+                <p id="lastNameDisplay"></p>
+                <p id="ageDisplay"></p>
+                <p id="sectionDisplay"></p> 
+            </section>
+            
+        </div>
+
+        <script>
+            function displayResult() {
+                const firstName = document.getElementById("fname").value;
+                const middleName = document.getElementById("mname").value;
+                const lastName = document.getElementById("lname").value;
+                const age = document.getElementById("age").value;
+                const section = document.getElementById("section").value;
+
+                document.getElementById("firstNameDisplay").innerText = "First Name: " + firstName;
+                document.getElementById("middleNameDisplay").innerText="Middle Name: " + middleName;
+                document.getElementById("lastNameDisplay").innerText="Last Name: " + lastName;
+                document.getElementById("ageDisplay").innerText="Your Age: " + age;
+                document.getElementById("sectionDisplay").innerText="Your Section: " + section;
+                document.getElementById("result").style.display = "block";
+
+            }
+        </script>
+
+    </body>
+</html>
